@@ -6,7 +6,7 @@
 #include <iostream>
 
 MallardDuck::MallardDuck() :
-    Duck(std::make_unique<FlyWithWings>(), std::make_unique<Quack>()) {
+    Duck(new FlyWithWings(), new Quack()) {
 }
 
 void MallardDuck::display() const {

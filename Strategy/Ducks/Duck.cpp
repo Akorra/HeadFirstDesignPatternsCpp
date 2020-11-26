@@ -5,21 +5,52 @@
 
 #include <iostream>
 
-Duck::Duck(std::unique_ptr<FlyBehavior> flyBehavior, std::unique_ptr<QuackBehavior> quackBehavior) :
+Duck::Duck() : flyBehavior(nullptr), quackBehavior(nullptr) { }
+
+Duck::Duck(FlyBehavior* flyBehavior, QuackBehavior* quackBehavior) :
     flyBehavior(std::move(flyBehavior)),
-    quackBehavior(std::move(quackBehavior)) {
+    quackBehavior(std::move(quackBehavior)) { }
+
+Duck::~Duck()
+{
+  if(flyBehavior)
+    delete flyBehavior;
+
+  if(quackBehavior)
+    delete quackBehavior;
 }
 
-void Duck::performQuack() const {
+void Duck::setFlyBehavior(FlyBehavior* fb)
+{
+  if(flyBehavior)
+    delete flyBehavior;
+
+  flyBehavior = fb;
+}
+
+void Duck::setQuackBehavior(QuackBehavior* qb)
+{
+  if(quackBehavior)
+    delete quackBehavior;
+
+  quackBehavior = qb;
+}
+
+void Duck::performQuack() const
+{
     // Delegate to the behavior class.
-    quackBehavior->quack();
+    if(quackBehavior)
+      quackBehavior->quack();
 }
 
-void Duck::swim() const {
+void Duck::swim() const
+{
     std::cout << "All ducks float, even decoys!" << std::endl;
 }
 
-void Duck::performFly() const {
+void Duck::performFly() const
+{
     // Delegate to the behavior class.
-    flyBehavior->fly();
+    if(flyBehavior)
+      flyBehavior->fly();
 }

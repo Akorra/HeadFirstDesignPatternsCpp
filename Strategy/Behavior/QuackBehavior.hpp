@@ -10,5 +10,4 @@ public:
     virtual void quack() const = 0;
 };
 
-
 #endif /* __QUACK_HPP__ */
