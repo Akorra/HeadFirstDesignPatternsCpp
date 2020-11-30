@@ -7,7 +7,7 @@ all: $(OBJ)
 $(OBJ): main.o mocha.o soy.o whip.o darkroast.o houseblend.o espresso.o
 	$(CC) main.o mocha.o soy.o whip.o darkroast.o houseblend.o espresso.o -o $(OBJ)
 
-main.o: main.cpp 
+main.o: main.cpp mocha.o soy.o whip.o darkroast.o houseblend.o espresso.o
 	$(CC) $(CFLAGS) main.cpp
 mocha.o: Beverages/Mocha.cpp
 	$(CC) $(CFLAGS) Beverages/Mocha.cpp
