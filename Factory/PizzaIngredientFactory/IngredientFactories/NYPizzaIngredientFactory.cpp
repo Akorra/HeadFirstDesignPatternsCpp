@@ -1,32 +1,37 @@
 #include "NYPizzaIngredientFactory.hpp"
 
-Dough* createDough()
+Dough* NYPizzaIngredientFactory::createDough()
 {
   return new ThinCrustDough();
 }
 
-Sauce* createSauce()
+Sauce* NYPizzaIngredientFactory::createSauce()
 {
   return new MarinaraSauce();
 }
 
-Cheese* createCheese()
+Cheese* NYPizzaIngredientFactory::createCheese()
 {
   return new ReggianoCheese();
 }
 
-Pepperoni* createPepperoni()
+Pepperoni* NYPizzaIngredientFactory::createPepperoni()
 {
   return new SlicedPepperoni();
 }
 
-Clams* createClam()
+Clams* NYPizzaIngredientFactory::createClam()
 {
   return new FreshClams();
 }
 
-Veggies createVeggies()
+Veggies NYPizzaIngredientFactory::createVeggies()
 {
-  return { new Garlic(), new Onion(), new Mushroom(), new GreenPepper() };
+  Veggies veggies;
+  veggies.push_back(new Garlic());
+  veggies.push_back(new Onion());
+  veggies.push_back(new Mushroom());
+  veggies.push_back(new GreenPepper());
 
+  return veggies;
 }

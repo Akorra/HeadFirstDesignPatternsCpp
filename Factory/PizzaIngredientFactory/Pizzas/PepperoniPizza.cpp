@@ -9,9 +9,9 @@ PepperoniPizza::PepperoniPizza(PizzaIngredientFactory* ingredientFactory)
 void PepperoniPizza::prepare()
 {
   std::cout << "Preparing " + name << std::endl;
-  dough     = ingredientFactory.createDough();
-  sauce     = ingredientFactory.createSauce();
-  cheese    = ingredientFactory.createCheese();
-  pepperoni = ingredientFactory.createPepperoni();
-  veggies   = ingredientFactory.createVeggies();
+  dough     = ingredientFactory->createDough();
+  sauce     = ingredientFactory->createSauce();
+  cheese    = ingredientFactory->createCheese();
+  pepperoni = ingredientFactory->createPepperoni();
+  veggies   = ingredientFactory->createVeggies();
 }

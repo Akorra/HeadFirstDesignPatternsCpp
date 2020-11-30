@@ -6,7 +6,7 @@
 class NYPizzaStore: public PizzaStore
 {
 public:
-  Pizza* makePizza(std::string type);
+  virtual Pizza* makePizza(std::string type) override;
 };
 
 #endif

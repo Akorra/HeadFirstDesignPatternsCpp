@@ -11,6 +11,6 @@ public:
   virtual Pepperoni*  createPepperoni() = 0;
   virtual Clams*      createClam()      = 0;
   virtual Veggies     createVeggies()   = 0;
-}
+};
 
 #endif

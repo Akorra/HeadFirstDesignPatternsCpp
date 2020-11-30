@@ -4,8 +4,8 @@ OBJ = main
 
 all: $(OBJ)
 
-$(OBJ): main.o pizza.o cheesepizza.o pepperonipizza.o pizzastore.o nypizzaingredientfactory.o nypizzastore.o
-	$(CC) main.o pizza.o cheesepizza.o pepperonipizza.o pizzastore.o nypizzaingredientfactory.o nypizzastore.o -o $(OBJ)
+$(OBJ): main.o pizza.o nypizzastore.o pizzastore.o nypizzaingredientfactory.o cheesepizza.o pepperonipizza.o
+	$(CC) main.o pizza.o nypizzastore.o pizzastore.o nypizzaingredientfactory.o cheesepizza.o pepperonipizza.o -o $(OBJ)
 
 main.o: main.cpp nypizzastore.o
 	$(CC) $(CFLAGS) main.cpp
@@ -19,7 +19,7 @@ pizzastore.o: Stores/PizzaStore.cpp pizza.o
 	$(CC) $(CFLAGS) Stores/PizzaStore.cpp
 nypizzaingredientfactory.o: IngredientFactories/NYPizzaIngredientFactory.cpp
 	$(CC) $(CFLAGS) IngredientFactories/NYPizzaIngredientFactory.cpp
-nypizzastore.o: Stores/NYPizzaStore.cpp pizzastore.o cheesepizza.o pepperonipizza.o nypizzaingredientfactory.o
+nypizzastore.o: Stores/NYPizzaStore.cpp nypizzaingredientfactory.o pizzastore.o cheesepizza.o pepperonipizza.o
 	$(CC) $(CFLAGS) Stores/NYPizzaStore.cpp
 
 exec:

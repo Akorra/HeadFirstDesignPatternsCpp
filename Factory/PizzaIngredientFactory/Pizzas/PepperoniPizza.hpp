@@ -11,7 +11,7 @@ private:
 public:
   PepperoniPizza(PizzaIngredientFactory* ingredientFactory);
 
-  virtual void prepare() override;
+  void prepare();
 };
 
 #endif

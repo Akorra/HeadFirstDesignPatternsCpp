@@ -9,7 +9,7 @@ CheesePizza::CheesePizza(PizzaIngredientFactory* ingredientFactory)
 void CheesePizza::prepare()
 {
   std::cout << "Preparing " + name << std::endl;
-  dough = ingredientFactory.createDough();
-  sauce = ingredientFactory.createSauce();
-  cheese= ingredientFactory.createCheese();
+  dough = ingredientFactory->createDough();
+  sauce = ingredientFactory->createSauce();
+  cheese= ingredientFactory->createCheese();
 }

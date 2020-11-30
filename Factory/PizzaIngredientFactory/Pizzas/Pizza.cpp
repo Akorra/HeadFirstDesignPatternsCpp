@@ -11,14 +11,14 @@ Pizza::Pizza()
   clams = nullptr;
 }
 
-void  setName(std::string name)
+void  Pizza::setName(std::string n)
 {
-    this->name = name;
+    name = n;
 }
 
 const std::string& Pizza::getName() const
 {
-    return this->name;
+    return name;
 }
 
 void Pizza::bake() const
@@ -41,20 +41,20 @@ std::ostream& operator<<(std::ostream& os, const Pizza& pizza)
 
     str = "\n---- " + pizza.getName() + "----\n";
     if(pizza.dough)
-      str.append(" - " + pizza.dough.name + "\n");
+      str.append(" - " + pizza.dough->name + "\n");
     if(pizza.sauce)
-      str.append(" - " + pizza.sauce.name + "\n");
+      str.append(" - " + pizza.sauce->name + "\n");
     if(pizza.cheese)
-      str.append(" - " + pizza.cheese.name + "\n");
+      str.append(" - " + pizza.cheese->name + "\n");
     if(pizza.pepperoni)
-      str.append(" - " + pizza.pepperoni.name + "\n");
+      str.append(" - " + pizza.pepperoni->name + "\n");
 
     if(pizza.veggies.size() > 0)
     {
-      str.append(" - veggies:")
+      str.append(" - veggies:\n");
       for (auto& veggie : pizza.veggies)
       {
-          str.append("   - " veggie.name + "\n");
+          str.append("   - " + veggie->name + "\n");
       }
     }
 

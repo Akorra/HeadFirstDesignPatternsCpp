@@ -20,6 +20,6 @@ Pizza* NYPizzaStore::makePizza(std::string type)
     pizza = new PepperoniPizza(factory);
     pizza->setName("New York Style Pepperoni Pizza");
   }
-  
+
   return pizza;
 }

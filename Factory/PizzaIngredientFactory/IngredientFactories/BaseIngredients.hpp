@@ -13,37 +13,37 @@ public:
 class Dough : public Ingredient
 {
 public:
-  Dough() : name("dough");
+  Dough() { name = "dough"; }
 };
 
 class Sauce : public Ingredient
 {
 public:
-  Sauce() : name("sauce");
+  Sauce() { name = "sauce"; }
 };
 
 class Cheese : public Ingredient
 {
 public:
-  Cheese() : name("cheese");
+  Cheese() {  name = "cheese"; }
 };
 
 class Veggie : public Ingredient
 {
 public:
-  Veggie() : name("veggie");
+  Veggie() { name = "veggie"; }
 };
 
 class Pepperoni : public Ingredient
 {
 public:
-  Pepperoni() : name("pepperoni");
+  Pepperoni() { name = "pepperoni"; }
 };
 
 class Clams : public Ingredient
 {
 public:
-  Clams() : name("clams");
+  Clams() { name = "clams"; }
 };
 
 typedef std::vector<Veggie*> Veggies;

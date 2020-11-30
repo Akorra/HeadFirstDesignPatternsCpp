@@ -29,7 +29,7 @@ public:
   virtual void cut()      const;
   virtual void box()      const;
 
-  void  setName(std::string name);
+  void  setName(std::string n);
 
   const std::string& getName() const;
 };

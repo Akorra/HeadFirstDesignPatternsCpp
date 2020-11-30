@@ -6,37 +6,37 @@
 class ThinCrustDough : public Dough
 {
 public:
-  ThinCrustDough() { name = "thin crust " + name; }
+  ThinCrustDough() { name = "thin crust dough"; }
 };
 
 class MarinaraSauce : public Sauce
 {
 public:
-  MarinaraSauce() { name = "marinara " + name; }
+  MarinaraSauce() { name = "marinara sauce"; }
 };
 
 class ReggianoCheese : public Cheese
 {
 public:
-  ReggianoCheese() { name = "reggiano " + name; }
+  ReggianoCheese() { name = "reggiano cheese"; }
 };
 
 class SlicedPepperoni : public Pepperoni
 {
 public:
-  SlicedPepperoni() { name = "sliced " + name; }
+  SlicedPepperoni() { name = "sliced pepperoni"; }
 };
 
 class FreshClams : public Clams
 {
 public:
-  FreshClams() { name = "fresh " + name; }
+  FreshClams() { name = "fresh clams"; }
 };
 
 class Garlic : public Veggie
 {
 public:
-  Garlic() { name = "garlic" }
+  Garlic() { name = "garlic"; }
 };
 
 class Onion : public Veggie
@@ -57,16 +57,16 @@ public:
   GreenPepper() { name = "green pepper"; }
 };
 
-class NYPizzaIngredientFactory : pulic PizzaIngredientFactory
+class NYPizzaIngredientFactory : public PizzaIngredientFactory
 {
-  public:
-    virtual Dough*      createDough()     override;
-    virtual Sauce*      createSauce()     override;
-    virtual Cheese*     createCheese()    override;
-    virtual Pepperoni*  createPepperoni() override;
-    virtual Clams*      createClam()      override;
+  public:    
+    Dough*      createDough();
+    Sauce*      createSauce();
+    Cheese*     createCheese();
+    Pepperoni*  createPepperoni();
+    Clams*      createClam();
 
-    virtual Veggies createVeggies() override;
+    Veggies createVeggies();
 };
 
 #endif
