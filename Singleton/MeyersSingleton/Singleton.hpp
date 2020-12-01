@@ -3,6 +3,9 @@
 
 #include <string>
 
+/*
+  Meyers Singleton is thread safe, guaranteed by static fields
+*/
 class Singleton
 {
 private:
