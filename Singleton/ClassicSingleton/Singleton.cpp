@@ -1,6 +1,5 @@
 #include "Singleton.hpp"
 
-
 Singleton* Singleton::_instance = nullptr;;
 
 Singleton* Singleton::GetInstance(const std::string& val)
