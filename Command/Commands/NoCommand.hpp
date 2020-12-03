@@ -10,6 +10,8 @@ class NoCommand : public Command
 {
 public:
   virtual void        execute() override {}
+  virtual void        undo()    override {}
+  virtual void        redo()    override {}
   virtual std::string getName() const override { return "No Commnd"; }
 };
 

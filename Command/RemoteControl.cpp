@@ -9,7 +9,6 @@ RemoteControl::RemoteControl()
   off_commands = std::vector<std::shared_ptr<Command>>(7, no_command);
 }
 
-
 void RemoteControl::setCommand(int slot, std::shared_ptr<Command> on, std::shared_ptr<Command> off)
 {
   on_commands[slot]  = on;
@@ -19,11 +18,41 @@ void RemoteControl::setCommand(int slot, std::shared_ptr<Command> on, std::share
 void RemoteControl::onButtonPressed(int slot)
 {
   on_commands[slot]->execute();
+  undo_commands.push_back(on_commands[slot]);
+  redo_commands.clear();
 }
 
 void RemoteControl::offButtonPressed(int slot)
 {
   off_commands[slot]->execute();
+  undo_commands.push_back(off_commands[slot]);
+  redo_commands.clear();
+}
+
+void RemoteControl::undoButtonPressed()
+{
+  if(undo_commands.size() > 0)
+  {
+    auto cmd = undo_commands.back();
+    if(cmd){
+      cmd->undo();
+      redo_commands.push_back(cmd);
+      undo_commands.pop_back();
+    }
+  }
+}
+
+void RemoteControl::redoButtonPressed()
+{
+  if(redo_commands.size() > 0)
+  {
+    auto cmd = redo_commands.back();
+    if(cmd){
+      cmd->redo();
+      undo_commands.push_back(cmd);
+      redo_commands.pop_back();
+    }
+  }
 }
 
 std::ostream& operator<<(std::ostream& os, const RemoteControl& remote)

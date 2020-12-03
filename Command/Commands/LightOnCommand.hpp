@@ -13,8 +13,10 @@ private:
 public:
   LightOnCommand(Light* light) { _light = light; }
 
-  void        execute() { _light->on();      }
-  std::string getName() const { return _light->getLocation() + " light on"; }
+  virtual void        execute() override        { _light->on();  }
+  virtual void        undo()    override        { _light->off(); }
+  virtual void        redo()    override        { _light->on(); }
+  virtual std::string getName() const override  { return _light->getLocation() + " light on"; }
 };
 
 #endif

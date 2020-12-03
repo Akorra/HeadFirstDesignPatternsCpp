@@ -9,13 +9,13 @@ Light::Light(const std::string& location)
 
 void Light::on()
 {
-  is_on = true;
+  _is_on = true;
   std::cout << _location << " light is on..." << std::endl;
 }
 
 void Light::off()
 {
-  is_on = false;
+  _is_on = false;
   std::cout << _location << " light is off..." << std::endl;
 }
 

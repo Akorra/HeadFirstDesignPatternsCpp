@@ -10,6 +10,8 @@ class RemoteControl
 public:
   std::vector<std::shared_ptr<Command>> on_commands;
   std::vector<std::shared_ptr<Command>> off_commands;
+  std::vector<std::shared_ptr<Command>> undo_commands;
+  std::vector<std::shared_ptr<Command>> redo_commands;
 
 public:
   RemoteControl();
@@ -18,6 +20,8 @@ public:
   void setCommand(int slot, std::shared_ptr<Command> on, std::shared_ptr<Command> off);
   void onButtonPressed(int slot);
   void offButtonPressed(int slot);
+  void undoButtonPressed();
+  void redoButtonPressed();
 };
 
 std::ostream& operator<<(std::ostream& os, const RemoteControl& remote);

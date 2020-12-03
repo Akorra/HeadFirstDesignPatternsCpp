@@ -7,7 +7,7 @@ class Light
 {
 private:
   std::string _location;
-  bool is_on;
+  bool        _is_on;
 
 public:
   Light(const std::string& location);

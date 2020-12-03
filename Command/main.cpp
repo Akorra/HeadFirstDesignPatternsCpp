@@ -28,5 +28,41 @@ int main()
   remote.setCommand(6, std::make_shared<LightOnCommand>(bth), std::make_shared<LightOffCommand>(bth));
 
   cout << remote << endl;
+  cout << "push a buton [y #slot / n #slot]: " << endl;
+
+  std::string cmd = "";
+  int  slt;
+
+  while(true)
+  {
+    cout << "select an action [on/off/undo/redo/quit]: ";
+    cin >> cmd;
+    if(cmd == "on")
+    {
+      cout << "select a slot: ";
+      cin >> slt;
+      if(slt < 7)
+        remote.onButtonPressed(slt);
+    }
+    else if(cmd == "off")
+    {
+      cout << "select a slot: ";
+      cin >> slt;
+      if(slt < 7)
+        remote.onButtonPressed(slt);
+    }
+    else if(cmd == "undo")
+    {
+      remote.undoButtonPressed();
+    }
+    else if(cmd == "redo")
+    {
+      remote.redoButtonPressed();
+    }
+    else if(cmd == "quit")
+    {
+      break;
+    }
+  }
   return 0;
 }
