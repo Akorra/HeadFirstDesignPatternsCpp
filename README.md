@@ -9,6 +9,7 @@
 - [Singleton](Singleton)
 - [Command](Command)
 - [Adapter](Adapter)
+- [Facade](Facade)
 - `TBA...`
 
 ## Build&Run
