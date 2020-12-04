@@ -9,7 +9,5 @@
 - [Singleton](Singleton)
 - [Command](Command)
 
-## Objective
-
 ## Installation And Run Guide
 makefiles included with each pattern implementation, using clang and c++17
