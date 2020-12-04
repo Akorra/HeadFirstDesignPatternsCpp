@@ -1,4 +1,4 @@
-# Head First Deign Patterns
+# Head First Design Patterns
 ### A C++ implementation of the [book](https://www.oreilly.com/library/view/head-first-design/0596007124/)'s problems
 
 ## Patterns so far:
@@ -10,5 +10,5 @@
 - [Command](Command)
 - `TBA...`
 
-## Installation And Run Guide
+## Build&Run
 makefiles included with each pattern implementation, using clang and c++17
