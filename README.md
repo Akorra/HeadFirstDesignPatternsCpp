@@ -8,6 +8,7 @@
 - [Factory](Factory)
 - [Singleton](Singleton)
 - [Command](Command)
+- [Adapter](Adapter)
 - `TBA...`
 
 ## Build&Run
