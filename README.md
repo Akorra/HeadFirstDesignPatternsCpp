@@ -1,5 +1,5 @@
 # Head First Deign Patterns
-### A C++ implementation of the [book](https://www.oreilly.com/library/view/head-first-design/0596007124/) problems
+### A C++ implementation of the [book](https://www.oreilly.com/library/view/head-first-design/0596007124/)'s problems
 
 ## Patterns so far:
 - [Strategy](Strategy)
