@@ -5,5 +5,5 @@
 <br/>
 
 <div align="center">
-  <a><img src="https://github.com/Akorra/HeadFirstDesignPatternsCpp/blob/master/Adapter/dia.png"></a><br><br>
+  <a><img src="https://github.com/Akorra/HeadFirstDesignPatternsCpp/blob/master/Decorator/dia.png"></a><br><br>
 </div>
