@@ -1,6 +1,6 @@
 CC = clang++
 CFLAGS = -std=c++17 -Wall -c
-OBJ = main
+OBJ = main -pthread
 
 all: $(OBJ)
 
@@ -11,7 +11,7 @@ main.o: main.cpp singleton.o
 	$(CC) $(CFLAGS) main.cpp
 singleton.o: Singleton.cpp
 	$(CC) $(CFLAGS) Singleton.cpp
-	
+
 exec:
 	./$(OBJ)
 

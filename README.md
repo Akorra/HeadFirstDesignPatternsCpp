@@ -10,6 +10,7 @@
 - [Command](Command)
 - [Adapter](Adapter)
 - [Facade](Facade)
+- [Template](Template)
 - `TBA...`
 
 ## Build&Run
