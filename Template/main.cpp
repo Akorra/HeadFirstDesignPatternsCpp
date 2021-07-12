@@ -1,12 +1,11 @@
-#include "Coffee.hpp"
-#include "Tea.hpp"
+#include "CaffeineBeverage.hpp"
 
 #include <iostream>
 
 int main()
 {
-  Tea tea;
-  Coffee coffee;
+  Beverages::Tea tea;
+  Beverages::Coffee coffee;
 
   std::cout << "Preparing Coffee Recipee:" << std::endl;
   coffee.prepareRecipee();
