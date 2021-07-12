@@ -12,8 +12,7 @@ public:
   void addCondiments() const override { std::cout << "Adding sugar and milk..." << std::endl; }
 
   bool customerWantsCondiments() const override {
-    std::string condiments;
-    std::getline(std::cin, condiments);
+    std::string condiments = getUserInput();
     return (std::tolower(condiments[0]) == 'y');
   }
 
@@ -21,10 +20,10 @@ private:
   std::string getUserInput() const {
     std::string answer = "";
 
-    std::cout << "Would you like milk and sugar with your coffee (y/n)?" << std::endl;
+    std::cout << "Would you like milk and sugar with your coffee (y/n)? " ;
     getline(std::cin, answer);
     if(answer == "")
-      return "no";
+      return "n";
 
     return answer;
   }
