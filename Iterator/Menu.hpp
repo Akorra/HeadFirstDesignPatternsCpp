@@ -6,6 +6,7 @@
 #include <array>
 #include <vector>
 #include <memory>
+#include <unordered_map>
 
 #define DINER_MAX_ITEMS 6
 
@@ -120,5 +121,32 @@ public:
 
 // ---------------------------------------
 
+class CafeMenuIterator: public Iterator
+{
+private:
+  int position = 0;
+  const std::unordered_map<std::string, MenuItem>& items;
+
+public:
+  CafeMenuIterator(const std::unordered_map<std::string, MenuItem>& items) : items(items) { }
+
+  bool     hasNext() const override;
+  MenuItem next()          override;
+  void     remove()        override;
+};
+
+// ---------------------------------------
+
+class CafeMenu : public Menu
+{
+private:
+  std::unordered_map<std::string, MenuItem> menuItems;
+
+public:
+  CafeMenu();
+
+  void addItem(const std::string& m_name, const std::string& m_description, bool m_vegetarian, double m_price);
+  std::unique_ptr<Iterator> createIterator() const override;
+};
 
 #endif

@@ -131,3 +131,58 @@ std::unique_ptr<Iterator> PancakeHouseMenu::createIterator() const
 }
 
 // ---------------------------------------
+
+CafeMenu::CafeMenu()
+{
+    SetName("Cafe Menu");
+    
+    addItem("Veggie Burger and Air Fries",
+            "Veggie Burger on a whole wheat bun, lettuce, tomato and fries",
+            true,
+            3.99);
+
+    addItem("Soup of the day",
+            "A cup of the soup of the day, with a side salad",
+            false,
+            3.69);
+
+    addItem("Burrito",
+            "A large burrito, with a whole pinto beans, salsa, guacamole",
+            true,
+            4.29);
+}
+
+void CafeMenu::addItem(const std::string& m_name, const std::string& m_description, bool m_vegetarian, double m_price)
+{
+    MenuItem tempItem(m_name, m_description, m_vegetarian, m_price);
+    menuItems.emplace(m_name, std::move(tempItem));
+}
+
+std::unique_ptr<Iterator> CafeMenu::createIterator() const
+{
+    auto chi = std::make_unique<CafeMenuIterator>(menuItems);
+    return chi;
+}
+
+// ---------------------------------------
+
+bool CafeMenuIterator::hasNext() const
+{
+    return (position < items.size());
+}
+
+MenuItem CafeMenuIterator::next()
+{
+    auto it = items.cbegin();
+    std::advance(it, position);
+
+    MenuItem menuItem = (*it).second;
+    position++;
+
+    return menuItem;
+}
+
+void CafeMenuIterator::remove()
+{
+  std::cerr << "You shouldn't be trying to remove menu items.";
+}
