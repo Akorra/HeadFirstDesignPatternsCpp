@@ -23,10 +23,10 @@ public:
 
   MenuItem() : name("EMPTY"), description(""), vegetarian(false), price(0.0) {}
 
-  virtual std::string getName()         const;
-  virtual std::string getDescription()  const;
-  virtual double      getPrice()        const;
-  virtual bool        isVegetarian()    const;
+  std::string getName()         const;
+  std::string getDescription()  const;
+  double      getPrice()        const;
+  bool        isVegetarian()    const;
 };
 
 // ---------------------------------------
