@@ -1,6 +1,6 @@
 CC = clang++
 CFLAGS = -std=c++17 -Wall -c
-OBJ = main -pthread
+OBJ = main
 
 all: $(OBJ)
 
