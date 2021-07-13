@@ -1,4 +1,6 @@
 # Facade
+### Type: Structural
+
 <p>Provide a unified interface to a set of interfaces in a subsystem.</p>
 <p>Defines a high-level interface that makes the subsystem easier to use.</p>
 

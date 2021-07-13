@@ -1,4 +1,6 @@
 # Adapter
+### Type: Structural
+
 <p>Convert the interface of a class into another interface clients expect.</p>
 <p>Lets classes work together that couldn't otherwise due to incompatible interfaces.</p>
 

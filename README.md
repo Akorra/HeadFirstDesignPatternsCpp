@@ -11,6 +11,8 @@
 - [Adapter](Adapter)
 - [Facade](Facade)
 - [Template](Template)
+- [Iterator](Iterator)
+- [Composite](Composite)
 - `TBA...`
 
 ## Build&Run

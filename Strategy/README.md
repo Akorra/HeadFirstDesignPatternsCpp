@@ -1,4 +1,6 @@
 # Strategy
+### Type: Behavioral
+
 <p>Define a family of algorithms, encapsulate each one, and make them interchangeable.</p>
 <p>Lets algorithm vary independently from clients that use it.</p>
 
