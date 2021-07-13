@@ -36,8 +36,9 @@ class Iterator
 public:
   virtual ~Iterator() {}
 
-  virtual bool hasNext() const = 0;
-  virtual MenuItem next() = 0;
+  virtual bool     hasNext() const = 0;
+  virtual MenuItem next()          = 0;
+  virtual void     remove()        = 0;
 };
 
 // ---------------------------------------
@@ -69,6 +70,7 @@ public:
 
   bool      hasNext() const override;
   MenuItem  next()          override;
+  void      remove()        override;
 };
 
 // ---------------------------------------
@@ -97,8 +99,9 @@ private:
 public:
   PancakeHouseMenuIterator(const std::vector<MenuItem>& items) : items(items) { }
 
-  bool hasNext() const override;
-  MenuItem next() override;
+  bool     hasNext() const override;
+  MenuItem next()          override;
+  void     remove()        override;
 };
 
 // ---------------------------------------

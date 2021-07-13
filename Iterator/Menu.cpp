@@ -23,6 +23,11 @@ MenuItem  DinerMenuIterator::next()
   return menuitem;
 }
 
+void DinerMenuIterator::remove()
+{
+  std::cerr << "You shouldn't be trying to remove menu items.";
+}
+
 // ---------------------------------------
 
 DinerMenu::DinerMenu()
@@ -80,6 +85,11 @@ MenuItem PancakeHouseMenuIterator::next()
   position++;
 
   return menuitem;
+}
+
+void PancakeHouseMenuIterator::remove()
+{
+  std::cerr << "You shouldn't be trying to remove menu items.";
 }
 
 // ---------------------------------------
