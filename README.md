@@ -13,6 +13,7 @@
 - [Template](Template)
 - [Iterator](Iterator)
 - [Composite](Composite)
+- [State](State)
 - `TBA...`
 
 ## Build&Run
