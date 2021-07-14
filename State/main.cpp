@@ -1,38 +1,19 @@
 #include "Gumball.hpp"
 
-int main()
-{
-    GumballMachine gm(5);
+int main() {
+    auto gumballMachine = GumballMachine::create(5);
 
-    std::cout << "State: " << gm << std::endl;
+    std::cout << *gumballMachine << std::endl;
 
-    gm.insertQuarter();
-    gm.turnCrank();
+    gumballMachine->insertQuarter();
+    gumballMachine->turnCrank();
 
-    std::cout << "\nState: " << gm << std::endl;
+    std::cout << *gumballMachine << std::endl;
 
-    gm.insertQuarter();
-    gm.ejectQuarter();
-    gm.turnCrank();
+    gumballMachine->insertQuarter();
+    gumballMachine->turnCrank();
+    gumballMachine->insertQuarter();
+    gumballMachine->turnCrank();
 
-    std::cout << "\nState: " << gm << std::endl;
-
-    gm.insertQuarter();
-    gm.turnCrank();
-    gm.insertQuarter();
-    gm.turnCrank();
-    gm.ejectQuarter();
-
-    std::cout << "\nState: " << gm << std::endl;
-
-    gm.insertQuarter();
-    gm.insertQuarter();
-    gm.turnCrank();
-    gm.insertQuarter();
-    gm.turnCrank();
-    gm.insertQuarter();
-    gm.turnCrank();
-
-    std::cout << "\nState: " << gm << std::endl;
-
+    std::cout << *gumballMachine << std::endl;
 }
