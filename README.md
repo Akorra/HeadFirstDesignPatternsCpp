@@ -14,7 +14,7 @@
 - [Iterator](Iterator)
 - [Composite](Composite)
 - [State](State)
-- `TBA...`
+- [Proxy](Proxy)
 
 ## Build&Run
 makefiles included with each pattern implementation, using clang and c++17
